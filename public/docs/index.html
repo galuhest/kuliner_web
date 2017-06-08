@@ -1,0 +1,1006 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Kuliner App API Documentation</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <h1>Welcome</h1>
+<p>Welcome to Kuliner App API documentation</p>
+<h1>Development</h1>
+<p>Kuliner App WebApp is developed using Laravel PHP framework, AdminLTE2, JQuery, and Bootstrap.</p>
+<h2>Models</h2>
+<p>Models are located on <code>App\</code>. Model validations can be seen on each models, in <code>rules()</code> function</p>
+<h2>Migrate</h2>
+<p>To run migration, run <code>php artisan migrate</code></p>
+<h2>Seed</h2>
+<p>To run seeder, run <code>php artisan db:seed</code>, the login account is <code>test@admin.com</code> and password <code>adminadmin</code></p>
+<h1>Region</h1>
+<p>Territory in Kuliner application is arranged in this order region -&gt; district -&gt; area</p>
+<h2>Create new Region</h2>
+<h3>HTTP Request</h3>
+<p><code>POST regions/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified region.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET regions/{region_id}</code></p>
+<h2>Update the specified region in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT regions/{region_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified region from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE regions/{region_id}</code></p>
+<h1>District</h1>
+<p>Territory in Kuliner application is arranged in this order region -&gt; district -&gt; area</p>
+<h2>Create new District</h2>
+<h3>HTTP Request</h3>
+<p><code>POST districts/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>region_id</td>
+<td>integer</td>
+<td>required, exists in regions</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified district.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET districts/{district_id}</code></p>
+<h2>Update the specified district in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT districts/{district_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>region_id</td>
+<td>integer</td>
+<td>required, exists in regions</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified district from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE districts/{district_id}</code></p>
+<h1>Area</h1>
+<p>Territory in Kuliner application is arranged in this order region -&gt; district -&gt; area</p>
+<h2>Create new Area</h2>
+<h3>HTTP Request</h3>
+<p><code>POST areas/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>district_id</td>
+<td>integer</td>
+<td>required, exists in districts</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified area.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET areas/{area_id}</code></p>
+<h2>Update the specified area in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT areas/{area_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>district_id</td>
+<td>integer</td>
+<td>required, exists in districts</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified area from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE areas/{area_id}</code></p>
+<h1>Outlet Type</h1>
+<p>Outlet Type is the type of an outlet, for example &quot;Kedai Makanan&quot;, &quot;Toko Kelontong&quot;, &quot;Cafe&quot;, etc.</p>
+<h2>Create new Outlet Type</h2>
+<h3>HTTP Request</h3>
+<p><code>POST outlet-types/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified resource.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET outlet-types/{outlet_type_id}</code></p>
+<h2>Update the specified resource in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT outlet-types/{outlet_type_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified resource from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE outlet-types/{outlet_type_id}</code></p>
+<h1>Product Type</h1>
+<p>Product Type is the type of an product, for example: &quot;Makanan&quot;, &quot;Minuman&quot;, &quot;Paket&quot;, etc.</p>
+<h2>Create new Product Type</h2>
+<h3>HTTP Request</h3>
+<p><code>POST product-types/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified product type.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET product-types/{product_type_id}</code></p>
+<h2>Update the specified product type in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT product-types/{product_type_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified product type from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE product-types/{product_type_id}</code></p>
+<h1>Outlet</h1>
+<p>Outlet is sellers of products, it can be &quot;Kedai&quot;, &quot;Toko&quot;, or etc.</p>
+<h2>Create new Outlet</h2>
+<h3>HTTP Request</h3>
+<p><code>POST outlets/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>outlet_type_id</td>
+<td>integer</td>
+<td>required, exists in outlet_types</td>
+<td>type of the outlet</td>
+</tr>
+<tr>
+<td>area_id</td>
+<td>integer</td>
+<td>required, exists in areas</td>
+<td>area where the outlet is located</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+<td>outlet location in relation to longitude point</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+<td>outlet location in relation to latitude point</td>
+</tr>
+<tr>
+<td>status</td>
+<td>boolean</td>
+<td>required</td>
+<td>whether outlet is active or not</td>
+</tr>
+<tr>
+<td>is_favourite</td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified outlet.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET outlet/{outlet_id}</code></p>
+<h2>Update the specified outlet in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT outlets/{outlet_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>outlet_type_id</td>
+<td>integer</td>
+<td>required, exists in outlet_types</td>
+<td>type of the outlet</td>
+</tr>
+<tr>
+<td>area_id</td>
+<td>integer</td>
+<td>required, exists in areas</td>
+<td>area where the outlet is located</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>required</td>
+<td>outlet location in relation to longitude point</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>required</td>
+<td>outlet location in relation to latitude point</td>
+</tr>
+<tr>
+<td>status</td>
+<td>boolean</td>
+<td>required</td>
+<td>whether outlet is active or not</td>
+</tr>
+<tr>
+<td>is_favourite</td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified outlet from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE outlets/{outlet_id}</code></p>
+<h1>Product</h1>
+<p>Product is items that an outlet sells. There is no &quot;price&quot; field in Product table, because price of a product can be changed time to time, See <code>Price</code></p>
+<h2>Create new Product</h2>
+<h3>HTTP Request</h3>
+<p><code>POST products/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>outlet_id</td>
+<td>numeric</td>
+<td>required, exists in outlets</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>product_type_id</td>
+<td>numeric</td>
+<td>required</td>
+<td>type of a product</td>
+</tr>
+<tr>
+<td>product_group_id</td>
+<td>numeric</td>
+<td>required</td>
+<td>group of a product in the outlet</td>
+</tr>
+<tr>
+<td>is_favourite</td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified product.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET products/{product_id}</code></p>
+<h2>Update the specified product in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT products/{product_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>outlet_id</td>
+<td>numeric</td>
+<td>required, exists in outlets</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>product_type_id</td>
+<td>numeric</td>
+<td>required</td>
+<td>type of a product</td>
+</tr>
+<tr>
+<td>product_group_id</td>
+<td>numeric</td>
+<td>required</td>
+<td>group of a product in the outlet</td>
+</tr>
+<tr>
+<td>is_favourite</td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified product from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE products/{product_id}</code></p>
+<h2>Get current price of the product</h2>
+<p><code>getCurrentPrice($date)</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>optional</td>
+<td>default value of $date is today</td>
+</tr>
+</tbody>
+</table>
+<h1>Order</h1>
+<p>Order has many OrderDetail, to create / update orders pass JSON-object with arrays of details</p>
+<h4>Example:</h4>
+<pre><code>{
+    "outlet_id": "1",
+    "date": "01/01/2017",
+    ...
+    "details": [
+        {
+            "product_id": "1",
+            "quantity": "3"
+        }, {
+            "product_id": "2",
+            "quantity": "5"
+        }
+    ]
+}</code></pre>
+<h2>Create new Order</h2>
+<h3>HTTP Request</h3>
+<p><code>POST orders/</code></p>
+<h4>Parameters</h4>
+<h5>Order</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>outlet_id</td>
+<td>integer</td>
+<td>required, exists in outlets</td>
+<td>outlet to where the order is made</td>
+</tr>
+<tr>
+<td>customer_id</td>
+<td>id</td>
+<td>required, exists in users</td>
+<td>customer who make the order</td>
+</tr>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td>infaq</td>
+<td>integer</td>
+<td>optional</td>
+<td>default value = 0</td>
+</tr>
+<tr>
+<td>paid_amount</td>
+<td>integer</td>
+<td>optional</td>
+<td>default value = 0</td>
+</tr>
+<tr>
+<td>delivery_time</td>
+<td>date</td>
+<td>optional</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>optional</td>
+<td>default = 0</td>
+</tr>
+</tbody>
+</table>
+<h5>Order Detail</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td>integer</td>
+<td>required, exists in orders</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>integer</td>
+<td>required, exists in products</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>required</td>
+<td>default value = 1, minimal = 1</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified order.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET orders/{order_id}</code></p>
+<h2>Update the specified order in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT orders/{order_id}</code></p>
+<h4>Parameters</h4>
+<h5>Order</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>outlet_id</td>
+<td>integer</td>
+<td>required, exists in outlets</td>
+<td>outlet to where the order is made</td>
+</tr>
+<tr>
+<td>customer_id</td>
+<td>id</td>
+<td>required, exists in users</td>
+<td>customer who make the order</td>
+</tr>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td>infaq</td>
+<td>integer</td>
+<td>optional</td>
+<td>default value = 0</td>
+</tr>
+<tr>
+<td>paid_amount</td>
+<td>integer</td>
+<td>optional</td>
+<td>default value = 0</td>
+</tr>
+<tr>
+<td>delivery_time</td>
+<td>date</td>
+<td>optional</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>optional</td>
+<td>default = 0</td>
+</tr>
+</tbody>
+</table>
+<h5>Order Detail</h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td>integer</td>
+<td>required, exists in orders</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>integer</td>
+<td>required, exists in products</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>required</td>
+<td>default value = 1, minimal = 1</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified order from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE orders/{order_id}</code></p>
+<h1>User</h1>
+<p>User in the application</p>
+<h2>Create new User</h2>
+<h3>HTTP Request</h3>
+<p><code>POST users/</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>required, unique</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>required</td>
+<td>will be encrypted when storing it to database</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>numeric</td>
+<td>required</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>role</td>
+<td>integer</td>
+<td>required</td>
+<td>&quot;customer&quot; = 0, &quot;member&quot; = 1, &quot;courier&quot; = 2, &quot;admin&quot; = 3</td>
+</tr>
+<tr>
+<td>status</td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Display the specified user.</h2>
+<h3>HTTP Request</h3>
+<p><code>GET users/{user_id}</code></p>
+<h2>Update the specified user in storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>PUT users/{user_id}</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>required, unique</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>required</td>
+<td>will be encrypted when storing it to database</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>numeric</td>
+<td>required</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>role</td>
+<td>integer</td>
+<td>required</td>
+<td>&quot;customer&quot; = 0, &quot;member&quot; = 1, &quot;courier&quot; = 2, &quot;admin&quot; = 3</td>
+</tr>
+<tr>
+<td>status</td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Remove the specified user from storage.</h2>
+<h3>HTTP Request</h3>
+<p><code>DELETE users/{user_id}</code></p>
+<h2>generate activation code</h2>
+<p><code>generateActivationCode()</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>no parameter</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Activate a user (status become active)</h2>
+<p><code>activate($activation_code)</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>activation_code</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h2>Generate member activation code</h2>
+<p><code>generateMemberActivationCode()</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>no parameter</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Activate a user (status become active)</h2>
+<p><code>activateMember($member_activation_code)</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>member_activation_code</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+      </div>
+      <div class="dark-box">
+                </div>
+    </div>
+  </body>
+</html>
